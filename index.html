@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <h1>Formulario de Inscripción a Carrera</h1>
+    <p>(* indica que la pregunta es obligatoria)</p>
+    <form action="/submit" method="POST">
+        <!-- Selección de carrera -->
+        <fieldset>
+            <legend>¿En qué carrera desea inscribirse? *</legend>
+            <select name="carrera" id="carrera" required>
+                <option value="">Seleccione una carrera</option>
+                <option value="Administración de Empresas">Administración de Empresas</option>
+                <option value="Bacteriología">Bacteriología</option>
+                <option value="Contaduría Pública">Contaduría Pública</option>
+                <option value="Derecho">Derecho</option>
+                <option value="Enfermería">Enfermería</option>
+                <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
+                <option value="Instrumentación Quirúrgica">Instrumentación Quirúrgica</option>
+                <option value="Licenciatura en Educación Infantil">Licenciatura en Educación Infantil</option>
+                <option value="Medicina">Medicina</option>
+                <option value="Odontología">Odontología</option>
+                <option value="Tecnología en Atención Prehospitalaria">Tecnología en Atención Prehospitalaria</option>
+                <option value="Tecnología en Estética y Cosmetología">Tecnología en Estética y Cosmetología</option>
+                <option value="Tecnología en Mecánica Dental">Tecnología en Mecánica Dental</option>
+                <option value="Trabajo Social">Trabajo Social</option>
+            </select>
+            <div id="carrera-error" class="error-message"></div>
+        </fieldset>
+
+        <!-- Información personal -->
+        <fieldset>
+            <legend>Información Personal</legend>
+            <div class="input-group">
+                <label for="primer_nombre">Primer Nombre: *</label>
+                <input type="text" id="primer_nombre" name="primer_nombre" required>
+                <div id="primer_nombre-error" placeholder="Ej: camilo" class="error-message"></div>
+                
+                <label for="segundo_nombre">Segundo Nombre:</label>
+                <input type="text" id="segundo_nombre" name="segundo_nombre">
+                <div id="segundo_nombre-error" placeholder="Ej: david" class="error-message"></div>
+            </div>
+
+            <div class="input-group">
+                <label for="primer_apellido">Primer Apellido: *</label>
+                <input type="text" id="primer_apellido" name="primer_apellido" required>
+                <div id="primer_apellido-error" placeholder="Ej: pedroza" class="error-message"></div>
+                
+                <label for="segundo_apellido">Segundo Apellido: *</label>
+                <input type="text" id="segundo_apellido" name="segundo_apellido" required>
+                <div id="segundo_apellido-error" placeholder="Ej: nuñez" class="error-message"></div>
+            </div>
+
+            <div class="input-group">
+                <label for="fecha_nacimiento">Fecha de Nacimiento: *</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                <div id="fecha_nacimiento-error" class="error-message"></div>
+                
+                <label for="tipo_documento">Tipo de Documento: *</label>
+                <select id="tipo_documento" name="tipo_documento" required>
+                    <option value="">Seleccione</option>
+                    <option value="CC">Cédula de Ciudadanía</option>
+                    <option value="TI">Tarjeta de Identidad</option>
+                    <option value="CE">Cédula de Extranjería</option>
+                </select>
+                <div id="tipo_documento-error" class="error-message"></div>
+            </div>
+
+            <div class="input-group">
+                <label for="numero_documento">Número de Documento: *</label>
+                <input type="text" id="numero_documento" name="numero_documento" required>
+                <div id="numero_documento-error" placeholder="Introduzca su numero de documento" class="error-message"></div>
+                
+                <label for="sexo_biologico">Sexo Biológico: *</label>
+                <select id="sexo_biologico" name="sexo_biologico" required>
+                    <option value="">Seleccione</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                <div id="sexo_biologico-error" class="error-message"></div>
+            </div>
+
+            <div class="input-group">
+                <label for="estado_civil">Estado Civil: *</label>
+                <select id="estado_civil" name="estado_civil" required>
+                    <option value="">Seleccione</option>
+                    <option value="Soltero/a">Soltero/a</option>
+                    <option value="Casado/a">Casado/a</option>
+                    <option value="Divorciado/a">Divorciado/a</option>
+                    <option value="Viudo/a">Viudo/a</option>
+                </select>
+                <div id="estado_civil-error" class="error-message"></div>
+                
+                <label for="correo_electronico">Correo Electrónico: *</label>
+                <input type="email" id="correo_electronico" name="correo_electronico" required>
+                <div id="correo_electronico-error" placeholder="Ej: tudominio@gmail.com" class="error-message"></div>
+            </div>
+
+            <div class="input-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono">
+                <div id="telefono-error" placeholder="Ej: 60564943" class="error-message"></div>
+                
+                <label for="celular">Celular: *</label>
+                <input type="tel" id="celular" name="celular" required>
+                <div id="celular-error" placeholder="Ej: 325 450 1136" class="error-message"></div>
+            </div>
+        </fieldset>
+
+
+                <!-- Dirección residencial -->
+        <fieldset>
+            <legend>Dirección Residencial</legend>
+            <div class="input-group">
+                <label for="pais">País:</label>
+                <input type="text" id="pais" name="pais" required>
+                <div id="pais-error" class="error-message"></div>
+                
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad" required>
+                <div id="ciudad-error" class="error-message"></div>
+            </div>
+
+            <div class="input-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+            <div id="direccion-error" class="error-message"></div>
+            </div>
+        </fieldset>
+
+        
+
+        <!-- Encuesta personal -->
+        <fieldset>
+            <legend>Encuesta Personal</legend>
+
+            <!-- ¿Tiene usted hijos? -->
+            <div class="input-group input-group-vertical">
+                <label>¿Tiene usted hijos? *</label>
+                <div>
+                    <input type="radio" id="hijos_no" name="hijos" value="No tengo" required>
+                    <label for="hijos_no">No tengo</label>
+                </div>
+                <div>
+                    <input type="radio" id="hijos_1" name="hijos" value="1 hijo">
+                    <label for="hijos_1">1 hijo</label>
+                </div>
+                <div>
+                    <input type="radio" id="hijos_2" name="hijos" value="2 hijos">
+                    <label for="hijos_2">2 hijos</label>
+                </div>
+                <div>
+                    <input type="radio" id="hijos_3" name="hijos" value="3 hijos">
+                    <label for="hijos_3">3 hijos</label>
+                </div>
+                <div>
+                    <input type="radio" id="hijos_4_mas" name="hijos" value="Más de 4 hijos">
+                    <label for="hijos_4_mas">Más de 4 hijos</label>
+                </div>
+                <div id="hijos-error" class="error-message"></div>
+            </div>
+
+            <!-- Resto de preguntas con el mismo formato vertical -->
+            <!-- Ejemplo: Poblaciones -->
+            <div class="input-group input-group-vertical">
+                <label>¿Se reconoce como parte de alguna de las siguientes poblaciones? *</label>
+                <div>
+                    <input type="radio" id="poblacion_ninguna" name="poblacion" value="Ninguna" required>
+                    <label for="poblacion_ninguna">Ninguna</label>
+                </div>
+                <div>
+                    <input type="radio" id="poblacion_indigenas" name="poblacion" value="Indígenas">
+                    <label for="poblacion_indigenas">Indígenas</label>
+                </div>
+                <div>
+                    <input type="radio" id="poblacion_afro" name="poblacion" value="Afrocolombianos">
+                    <label for="poblacion_afro">Afrocolombianos</label>
+                </div>
+                <div>
+                    <input type="radio" id="poblacion_raizales" name="poblacion" value="Raizales">
+                    <label for="poblacion_raizales">Raizales</label>
+                </div>
+                <div>
+                    <input type="radio" id="poblacion_rom" name="poblacion" value="Pueblo ROM o Gitano">
+                    <label for="poblacion_rom">Pueblo ROM o Gitano</label>
+                </div>
+                <div id="poblacion-error" class="error-message"></div>
+            </div>
+
+            <!-- Discapacidades -->
+            <div class="input-group input-group-vertical">
+                <label>¿Cuenta con alguna discapacidad? *</label>
+                <div>
+                    <input type="checkbox" id="ninguna" name="discapacidades" value="Ninguna">
+                    <label for="discapacidad_ninguna">Ninguna</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="discapacidad_motriz" name="discapacidades" value="Discapacidad motriz">
+                    <label for="discapacidad_motriz">Discapacidad motriz</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="discapacidad_sorda" name="discapacidades" value="Discapacidad sorda">
+                    <label for="discapacidad_sorda">Discapacidad sorda</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="discapacidad_cognitiva" name="discapacidades" value="Discapacidad cognitiva">
+                    <label for="discapacidad_cognitiva">Discapacidad cognitiva</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="discapacidad_otras" name="discapacidades" value="otra">
+                    <label for="discapacidad_otras">Otra</label>
+                </div>
+                <div id="campoOtra" style="display:none;">
+                    <label for="otraDiscapacidad">¿Diga cuál es su otra discapacidad?</label>
+                    <input type="text" id="otraDiscapacidad" name="otraDiscapacidad">
+                </div>
+                <div id="discapacidades-error" class="error-message"></div>
+            </div>
+
+            <!-- Pregunta: ¿Usted trabaja actualmente? -->
+            <div class="input-group input-group-vertical">
+                <label>¿Usted trabaja actualmente? *</label>
+                <div>
+                    <input type="radio" id="trabajo_no" name="trabajo" value="No estoy trabajando" required>
+                    <label for="trabajo_no">No estoy trabajando</label>
+                </div>
+                <div>
+                    <input type="radio" id="trabajo_empleado" name="trabajo" value="Sí, empleado">
+                    <label for="trabajo_empleado">Sí, empleado</label>
+                </div>
+                <div>
+                    <input type="radio" id="trabajo_independiente" name="trabajo" value="Sí, independiente">
+                    <label for="trabajo_independiente">Sí, independiente</label>
+                </div>
+                <div id="trabajo-error" class="error-message"></div>
+            </div>
+
+        </fieldset>
+
+        <!-- Botón de envío -->
+        <button type="submit">Enviar</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
